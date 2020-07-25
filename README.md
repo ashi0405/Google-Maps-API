@@ -3,7 +3,7 @@
 ```JavaScript
 const express=require('express')
 const app=express()
-app.get('/readme',(req,res){
+app.get('/readme',(req,res)=>{
     res.send('Hello You are in Readme File... :)')
 })
 
