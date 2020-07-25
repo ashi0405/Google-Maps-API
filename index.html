@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <title>My Google Map</title>
+
+    <style>
+      /* Setting the size of the div element that contains the map */
+      #map {
+        height: 70%;
+        /* The height is 400 pixels */
+        width: 100%;
+        border-radius: 12px;
+        position: relative;
+        /* The width is the width of the web page */
+      }
+    </style>
+
+    <!-- Script for Google Maps API -->
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqHyK8_Uwj2PEv5G2HdPDw3EjdYGzXmhU&callback=initMap"
+    ></script>
+
+    <script src="./maps.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="jumbotron bg-light">
+        <h1 class="display-2" style="text-align: center;">
+          Using Google Maps API
+        </h1>
+      </div>
+    </div>
+
+    <div class="row mt-5" style="width: 100%; height: 100%;">
+      <div class="col-md-4 ml-3" style="position: relative;">
+        <!-- Map -->
+        <div id="map"></div>
+
+        <!-- Card on Map -->
+
+        <div id="mcard">
+          <div class="card">
+            <div class="card-body" style="padding: 5px; padding-bottom: 10px;">
+              <span>
+                <a href="#" id="navigation">
+                  <img
+                    class="right p-1"
+                    src="./images/navigation.png"
+                    style="
+                      width: 15%;
+                      height: 30px;
+                      float: right;
+                      margin-right: 20px;
+                      margin-top: 5px;
+                    "
+                  />
+                </a>
+              </span>
+
+              <h5 class="card-title" id="mcard-title">Card title</h5>
+
+              <p class="card-text" id="mcard-est">
+                Some example text . Some example.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-deck col-md-8">
+        <!-- Description Card -->
+        <div class="row">
+          <div class="col mb-3" id="expandDiv">
+            <div class="card">
+              <div class="card-header">
+                <h4 id="heading"></h4>
+              </div>
+
+              <div class="card-body" id="content"></div>
+              <div class="card-footer">
+                <span id="footer"></span>
+                <button
+                  type="button"
+                  class="btn btn-outline-danger float-right"
+                  id="close"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Place Cards  -->
+        <div class="row mt-0">
+          <div class="stretched-link card cards">
+            <img
+              src="./images/gtbit.jpg"
+              style="
+                width: 100%;
+                height: 250px;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+              "
+              class="card-img-top"
+              alt="GTBIT"
+            />
+
+            <div class="card-body">
+              <h5 class="card-title">
+                Guru Tegh Bahadur Institute of Technology
+              </h5>
+            </div>
+          </div>
+
+          <div class="stretched-link card cards">
+            <img
+              src="./images/niec.jpg"
+              style="
+                width: 100%;
+                height: 250px;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+              "
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Northern India Engineering College</h5>
+            </div>
+          </div>
+
+          <div class="stretched-link card cards">
+            <img
+              src="./images/dtu.jpg"
+              style="
+                width: 100%;
+                height: 250px;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+              "
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Delhi Technological University</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="stretched-link card cards">
+            <img
+              src="./images/igdtuw.jpg"
+              style="
+                width: 100%;
+                height: 250px;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+              "
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Indira Gandhi Technological University</h5>
+            </div>
+          </div>
+
+          <div class="stretched-link card cards">
+            <img
+              src="./images/nsit.jpg"
+              style="
+                width: 100%;
+                height: 250px;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+              "
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Netaji Subhash Institute of Technology</h5>
+            </div>
+          </div>
+
+          <div class="stretched-link card cards">
+            <img
+              src="./images/mait.jpg"
+              style="
+                width: 100%;
+                height: 250px;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+              "
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                Maharaja Agrasen Institute of Technology
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

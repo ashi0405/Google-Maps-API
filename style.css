@@ -1,0 +1,52 @@
+.card {
+  border-radius: 15px;
+}
+
+.card:hover {
+  box-shadow: 0px 2px 2px 0px #888888;
+}
+
+.jumbotron {
+  box-shadow: 0px 2px 2px 0px #888888;
+}
+
+div #expandDiv {
+  display: none;
+}
+
+#footer {
+  color: rgb(66, 41, 212);
+}
+
+.right:hover {
+  display: block;
+  box-shadow: 1px 2px 2px 0px grey;
+
+  border-radius: 5px;
+}
+
+#mcard-title {
+  font-size: medium;
+}
+#mcard {
+  display: none;
+  position: absolute;
+  top: 5px;
+  left: 20px;
+}
+
+#mcard-est {
+  font-size: 15px;
+  color: grey;
+}
+
+/* for smaller screens */
+@media screen and (max-width: 768px) {
+  #map {
+    visibility: collapse;
+  }
+
+  #mcard {
+    visibility: collapse;
+  }
+}
